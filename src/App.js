@@ -16,7 +16,7 @@ function App() {
         </div>
         <div className="resume-doc__header__description">
           <h1>{resume.name}</h1>
-          <p className="secondary-color">{resume.desc}</p>
+          <p className="secondary-color">{resume.summary}</p>
           <ul>
             <li>
               <b>Location:</b> Montevideo, Uruguay
