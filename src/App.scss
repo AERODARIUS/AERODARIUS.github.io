@@ -45,6 +45,10 @@ body {
         border: 1px solid #333;
         width: auto;
         height: auto;
+
+        img {
+          max-width: 80vw;
+        }
       }
     }
 

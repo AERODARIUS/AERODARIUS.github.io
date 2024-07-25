@@ -8,7 +8,11 @@ function App() {
     <div className="resume-doc">
       <div className="resume-doc__header">
         <div className="resume-doc__header__avatar">
-          <Avatar src="./img/profile-pic.jpg" className="profile-pic" />
+          <Avatar
+            // size={{ xs: 128, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100 }}
+            src="./img/profile_pic.jpeg"
+            className="profile-pic"
+          />
         </div>
         <div className="resume-doc__header__description">
           <h1>{resume.name}</h1>
