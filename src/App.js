@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar } from "antd";
 import "./App.scss";
+import resume from "./resume.json";
 
 function App() {
   return (
@@ -10,12 +11,8 @@ function App() {
           <Avatar src="./img/profile-pic.jpg" className="profile-pic" />
         </div>
         <div className="resume-doc__header__description">
-          <h1>Dario Cruz</h1>
-          <p className="secondary-color">
-            I’m a tech enthusiast with over 12 years of experience in the
-            development of web applications. I’m passionate about the latest
-            trends in technology, driving collaboration, and achieving results.
-          </p>
+          <h1>{resume.name}</h1>
+          <p className="secondary-color">{resume.desc}</p>
           <ul>
             <li>
               <b>Location:</b> Montevideo, Uruguay
@@ -38,21 +35,33 @@ function App() {
       </div>
       <div className="resume-doc__content content-experience">
         <h2>Experience</h2>
-        <div className="experience">
-          <p>
-            Altimetrik: Team Lead JANUARY 2019- PRESENT I led teams working with
-            multiple fintech clients using a wide variety of technologies,
-            maintaining SPA and server-side applications. Some of the
-            technologies I have been working on are Reactjs, Vue, Solid, RoR,
-            Clojure, ClojureJs, NodeJs, NextJs, PostgreSQL, and Salesforce.
-            Responsibilities: Lead and motivate the team to accomplish the
-            project objectives Plan the development and the frontend side of the
-            architecture of the solution Provide and receive feedback from each
-            team member Empower the team members by guiding them to reach higher
-            positions in their careers Taking interviews of new candidates
-            Actively assist in the development
-          </p>
-        </div>
+        {resume.experience.map(
+          (
+            {
+              company,
+              title,
+              start_date,
+              end_date,
+              description,
+              responsibilities,
+            }
+          ) => (
+            <div className="content-experience--job" key={`${company}-${title}-${start_date}-${end_date}`}>
+              <h3>
+                {company}: {title}
+              </h3>
+              <h4>
+                {start_date} - {end_date}
+              </h4>
+              <p>{description}</p>
+              <ul>
+                {responsibilities.map((responsibility ) => (
+                  <li key={responsibility}>{responsibility}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

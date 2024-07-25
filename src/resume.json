@@ -1,0 +1,180 @@
+{
+  "name": "Dario Cruz",
+  "summary": "I’m a tech enthusiast with over 12 years of experience in the development of web applications. I’m passionate about the latest trends in technology, driving collaboration, and achieving results.",
+  "location": "Montevideo, Uruguay",
+  "contact": {
+    "email": "dariodcruz@gmail.com",
+    "phone": "+598 937 63229",
+    "linkedin": "linkedin.com/in/cruzdario"
+  },
+  "personal_info": {
+    "birthdate": "30/11/1990"
+  },
+  "experience": [
+    {
+      "company": "Altimetrik",
+      "title": "Team Lead",
+      "start_date": "January 2019",
+      "end_date": "Present",
+      "description": "I led teams working with multiple fintech clients using a wide variety of technologies, maintaining SPA and server-side applications. Some of the technologies I have been working on are Reactjs, Vue, Solid, RoR, Clojure, ClojureJs, NodeJs, NextJs, PostgreSQL, and Salesforce.",
+      "responsibilities": [
+        "Lead and motivate the team to accomplish the project objectives",
+        "Plan the development and the frontend side of the architecture of the solution",
+        "Provide and receive feedback from each team member",
+        "Empower the team members by guiding them to reach higher positions in their careers",
+        "Taking interviews of new candidates",
+        "Actively assist in the development"
+      ]
+    },
+    {
+      "company": "Altimetrik",
+      "title": "Senior Developer",
+      "start_date": "July 2018",
+      "end_date": "December 2018",
+      "description": "Working with globally distributed agile teams, building and maintaining complex systems based on the Force.com platform.",
+      "responsibilities": [
+        "Guide Jr. developers whenever a new one joined the project",
+        "Development of the frontend side of the application using Visualforce, Aura components, Lightning pages, JavaScript and AngularJS",
+        "Development of the backend architecture using Apex and declarative capabilities of the Salesforce platform",
+        "Migrating Salesforce classic to Lightning experience"
+      ]
+    },
+    {
+      "company": "Altimetrik",
+      "title": "Semi-Senior Developer",
+      "start_date": "July 2016",
+      "end_date": "June 2018",
+      "description": "Working with an agile team using Scrum methodology to ensure delivery of high-quality work every weekly iteration.",
+      "responsibilities": [
+        "Develop Salesforce applications using the declarative capabilities of Salesforce",
+        "Developing complex responsive applications using Apex, Visualforce pages, JavaScript, CSS, and HTML"
+      ]
+    },
+    {
+      "company": "Altimetrik",
+      "title": "Junior Developer",
+      "start_date": "March 2014",
+      "end_date": "June 2016",
+      "description": "I was developing a web page to manage clients and events for any eye care company.",
+      "responsibilities": [
+        "Developing a web page to manage clients and events for an eye care company",
+        "Implement the interface of the web application in ExtJs",
+        "Help migrate from Salesforce to .Net system"
+      ]
+    },
+    {
+      "company": "Altimetrik",
+      "title": "QA Advisory",
+      "start_date": "August 2013",
+      "end_date": "February 2014",
+      "description": "I was in charge of guiding and helping other junior and trainee QAs, in particular with automation. Document all processes regarding the QA activity. Also having the same responsibilities as the previous role.",
+      "responsibilities": [
+        "Guide and help junior and trainee QAs, particularly with automation",
+        "Document all processes regarding QA activity",
+        "Perform exploratory testing, write and execute test plans",
+        "Maintenance of automated test cases in Jenkins",
+        "Test Web Services using SoapUI and CURL",
+        "Performance test cases using JMeter"
+      ]
+    },
+    {
+      "company": "Altimetrik",
+      "title": "QA Tester",
+      "start_date": "March 2012",
+      "end_date": "July 2013",
+      "description": "Specialized education in machine learning and natural language processing.",
+      "responsibilities": [
+        "Perform exploratory testing",
+        "Write and execute test plans",
+        "Responsive design testing",
+        "Maintenance of automated test cases in Jenkins",
+        "Test Web Services using SoapUI and CURL",
+        "Performance test cases using JMeter"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree in Artificial Intelligence",
+      "institution": "Facultad de Ingeniería, Udelar",
+      "status": "In Progress"
+    },
+    {
+      "degree": "Computer Analyst",
+      "institution": "Facultad de Ingeniería, Udelar",
+      "completed_year": 2019
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Scrum Foundation Professional Certificate",
+      "issuer": "CertiProf",
+      "date": "January 2020",
+      "certification_id": "FLCLDJLPDB-SSSQKQGK-WHKBDHKWKF"
+    },
+    {
+      "name": "First Certificate In English",
+      "issuer": "Anglo Institute",
+      "date": "June 2010",
+      "details": "Council of Europe Level B2, University of Cambridge Accreditation Number: 500/2705/0"
+    }
+  ],
+  "skills": [
+    "ReactJs",
+    "JavaScript (ES6+)",
+    "CSS",
+    "HTML",
+    "SQL",
+    "Salesforce",
+    "Leadership",
+    "Scrum",
+    "OOP"
+  ],
+  "side_projects": [
+    {
+      "name": "GitHub Projects",
+      "url": "https://github.com/AERODARIUS"
+    },
+    {
+      "name": "XLS to XML Converter (Java)",
+      "url": "https://sourceforge.net/projects/xlstoxml",
+      "code_url": "https://github.com/AERODARIUS/xlstoxml"
+    },
+    {
+      "name": "Demo React application (ReactJs)",
+      "url": "https://erp-rpg.web.app",
+      "code_url": "https://github.com/AERODARIUS/erp-rpg"
+    }
+  ],
+  "articles": [
+    {
+      "title": "How to Become a Web Developer: Navigating the Rising Demand in the Era of AI",
+      "url": "https://dev.to/aerodarius/how-to-become-a-web-developer"
+    },
+    {
+      "title": "Everybody hates cookies, so why are they still alive in 2023? 🤔",
+      "url": "https://dev.to/aerodarius/everybody-hates-cookies"
+    },
+    {
+      "title": "Git Cheatsheet: A Quick Reference Guide for Git Commands ✨",
+      "url": "https://dev.to/aerodarius/git-cheatsheet"
+    },
+    {
+      "title": "Choosing the Right Programming Language",
+      "url": "https://dev.to/aerodarius/choosing-the-right-programming-language"
+    }
+  ],
+  "other_achievements": [
+    {
+      "name": "Ideathon 2020 Innovation Award",
+      "description": "POC in React for skills management",
+      "url": "https://erp-rpg.web.app/leaderboard"
+    },
+    {
+      "name": "Altimetrik’s Got Talent 2016 First Place",
+      "description": "All in one component for displaying Salesforce data in List, Cardwall, Gallery and Map",
+      "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EJHWEUA5"
+    }
+  ]
+}
+

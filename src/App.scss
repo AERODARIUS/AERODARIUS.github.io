@@ -20,8 +20,16 @@ body {
   }
 
   h2 {
-    color: #20c731;
+    color: #53a8b6;
     text-transform: uppercase;
+  }
+
+  h3 {
+    color: #79c2d0;
+  }
+
+  h4 {
+    color: #bbe4e9;
   }
 
   &__header {
@@ -43,10 +51,22 @@ body {
     &__description {
       background: #24242e;
       padding: 2rem;
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
     }
   }
 
   &__content {
-    //
+    padding: 2rem;
+  }
+
+  .content-experience {
+    &--job {
+      margin-bottom: 3rem;
+    }
+    border-bottom: 3px dashed #a6a5ae;
   }
 }
