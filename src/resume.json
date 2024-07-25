@@ -97,12 +97,14 @@
     {
       "degree": "Degree in Artificial Intelligence",
       "institution": "Facultad de Ingeniería, Udelar",
-      "status": "In Progress"
+      "status": "In Progress",
+      "description": "Specialized education in machine learning and natural language processing."
     },
     {
       "degree": "Computer Analyst",
       "institution": "Facultad de Ingeniería, Udelar",
-      "completed_year": 2019
+      "status": "COMPLETED 2019",
+      "description": "Knowledge and skills to assess, analyze, and enhance computer systems' performance, resolving issues and maximizing efficiency.git a"
     }
   ],
   "certifications": [
@@ -177,4 +179,3 @@
     }
   ]
 }
-

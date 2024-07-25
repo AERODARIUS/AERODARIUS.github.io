@@ -67,6 +67,23 @@ function App() {
           )
         )}
       </div>
+      
+      <div className="resume-doc__content content-experience">
+        <h2>Education</h2>
+        {resume.education.map(
+          ({ degree, institution, status, description }) => (
+            <div className="content-experience--job" key={`${degree}-${institution}-${status}`}>
+              <h3>
+                {degree} - {institution}
+              </h3>
+              <h4>
+                {status}
+              </h4>
+              <p>{description}</p>
+            </div>
+          )
+        )}
+      </div>
     </div>
   );
 }
