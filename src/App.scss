@@ -11,8 +11,13 @@ body {
   align-items: center;
   color: #a6a5ae;
 
+  a,
   h1 {
     color: #f9feff;
+  }
+
+  .url-wrapper {
+    word-break: break-all;
   }
 
   b {
@@ -20,8 +25,11 @@ body {
   }
 
   h2 {
-    color: #53a8b6;
+    color: #1e1e28;
     text-transform: uppercase;
+    background: #a6a5ae;
+    background: linear-gradient(90deg, #79c2d0 10%, rgb(166, 165, 174, 0) 100%);
+    padding: 0.5rem;
   }
 
   h3 {
@@ -35,6 +43,7 @@ body {
   &__header {
     display: flex;
     flex-direction: column;
+    background-image: url(./img/banner.png);
 
     &__avatar {
       display: flex;
@@ -47,7 +56,8 @@ body {
         height: auto;
 
         img {
-          max-width: 80vw;
+          width: 80vw;
+          max-width: 12rem;
         }
       }
     }
@@ -68,9 +78,15 @@ body {
   }
 
   .content-experience {
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 3px solid #a6a5ae5e;
+
     &--job {
+      width: 100%;
+      white-space: normal;
+      overflow-wrap: break-word;
       margin-bottom: 3rem;
     }
-    border-bottom: 3px solid #a6a5ae5e;
   }
 }

@@ -103,8 +103,8 @@
     {
       "degree": "Computer Analyst",
       "institution": "Facultad de Ingeniería, Udelar",
-      "status": "COMPLETED 2019",
-      "description": "Knowledge and skills to assess, analyze, and enhance computer systems' performance, resolving issues and maximizing efficiency.git a"
+      "status": "Completed in 2019",
+      "description": "Knowledge and skills to assess, analyze, and enhance computer systems' performance, resolving issues and maximizing efficiency."
     }
   ],
   "certifications": [
@@ -112,13 +112,18 @@
       "name": "Scrum Foundation Professional Certificate",
       "issuer": "CertiProf",
       "date": "January 2020",
-      "certification_id": "FLCLDJLPDB-SSSQKQGK-WHKBDHKWKF"
+      "details": "Certification Id: FLCLDJLPDB-SSSQKQGK-WHKBDHKWKF"
     },
     {
       "name": "First Certificate In English",
       "issuer": "Anglo Institute",
       "date": "June 2010",
       "details": "Council of Europe Level B2, University of Cambridge Accreditation Number: 500/2705/0"
+    },
+    {
+      "name": "Salesforce Certifications",
+      "url": "https://trailblazer.me/id/dariocruz",
+      "details": "Platform App Builder - Platform Developer I - JavaScript Developer I - Business Analyst - AI Associate"
     }
   ],
   "skills": [
@@ -139,13 +144,11 @@
     },
     {
       "name": "XLS to XML Converter (Java)",
-      "url": "https://sourceforge.net/projects/xlstoxml",
-      "code_url": "https://github.com/AERODARIUS/xlstoxml"
+      "url": "https://sourceforge.net/projects/xlstoxml"
     },
     {
       "name": "Demo React application (ReactJs)",
-      "url": "https://erp-rpg.web.app",
-      "code_url": "https://github.com/AERODARIUS/erp-rpg"
+      "url": "https://erp-rpg.web.app"
     }
   ],
   "articles": [
@@ -168,12 +171,12 @@
   ],
   "other_achievements": [
     {
-      "name": "Ideathon 2020 Innovation Award",
+      "name": "Ideathon 2020, Innovation Award",
       "description": "POC in React for skills management",
       "url": "https://erp-rpg.web.app/leaderboard"
     },
     {
-      "name": "Altimetrik’s Got Talent 2016 First Place",
+      "name": "Altimetrik’s Got Talent 2016, First Place",
       "description": "All in one component for displaying Salesforce data in List, Cardwall, Gallery and Map",
       "url": "https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EJHWEUA5"
     }
