@@ -149,21 +149,6 @@ function App() {
           </div>
         ))}
       </div>
-
-      <div className="resume-doc__content content-experience">
-        <h2>Other Achievements</h2>
-        {resume.other_achievements.map(({ name, description, url }) => (
-          <div className="content-experience--job" key={`${name}`}>
-            <h3>{name}</h3>
-            <p>{description}</p>
-            {url && (
-              <div className="url-wrapper">
-                <a href={url}>{url}</a>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
