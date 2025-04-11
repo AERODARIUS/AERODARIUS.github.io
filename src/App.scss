@@ -1,9 +1,27 @@
 body {
-  background-color: #1e1e28;
+  background-color: #f8f9fa; /* Light gray */
   font-family: "Source Code Pro", monospace;
   font-optical-sizing: auto;
   font-style: normal;
+  color: #343a40; /* Dark gray */
+  line-height: 1.6;
 }
+
+section {
+  transition: opacity 0.5s ease-in-out;
+}
+
+a {
+  color: #007bff; /* Primary blue */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px);
+  }
+}
+
 
 .resume-doc {
   display: flex;
@@ -11,12 +29,24 @@ body {
   align-items: center;
   color: #a6a5ae;
 
-  a,
+  
   h1 {
-    color: #f9feff;
+    color: #343a40;
   }
 
   .url-wrapper {
+    transition: color 0.3s ease, transform 0.2s ease;
+
+    a {
+      color: #007bff;
+      &:hover {
+        color: #0056b3;
+        transform: translateY(-2px);
+      }
+
+    }
+
+
     word-break: break-all;
   }
 
@@ -24,26 +54,41 @@ body {
     font-weight: bolder;
   }
 
+  button {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  
+    &:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+      transform: translateY(-2px);
+    }
+  }
+
   h2 {
-    color: #1e1e28;
+    color: #495057; /* Slightly lighter dark gray */
     text-transform: uppercase;
-    background: #a6a5ae;
-    background: linear-gradient(90deg, #79c2d0 10%, rgb(166, 165, 174, 0) 100%);
+    background: #ced4da; /* Light gray for background */
+    background: linear-gradient(90deg, #007bff 10%, rgba(206, 212, 218, 0) 100%); /* Blue gradient */
     padding: 0.5rem;
+    border-radius: 0.25rem;
   }
 
   h3 {
-    color: #79c2d0;
+    color: #007bff; /* Primary blue */
   }
 
   h4 {
-    color: #bbe4e9;
+    color: #007bff; /* Lighter blue */
   }
 
   &__header {
     display: flex;
     flex-direction: column;
-    background-image: url(./img/banner.png);
 
     &__avatar {
       display: flex;
@@ -51,7 +96,6 @@ body {
       padding: 2rem;
 
       .profile-pic {
-        border: 1px solid #333;
         width: auto;
         height: auto;
 
@@ -62,8 +106,8 @@ body {
       }
     }
 
-    &__description {
-      background: #24242e;
+    &__description {     
+      background-color: #f8f9fa; 
       padding: 2rem;
 
       ul {
@@ -72,7 +116,8 @@ body {
       }
     }
   }
-
+  
+  
   &__content {
     padding: 2rem;
   }
@@ -80,7 +125,7 @@ body {
   .content-experience {
     width: 100%;
     box-sizing: border-box;
-    border-bottom: 3px solid #a6a5ae5e;
+    border-bottom: 1px solid #e9ecef; /* Light gray border */
 
     &--job {
       width: 100%;

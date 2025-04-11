@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, FloatButton } from "antd";
 import { FileTextOutlined } from "@ant-design/icons";
 import "./App.scss";
@@ -13,6 +13,21 @@ function App() {
     link.click();
     document.body.removeChild(link);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect(); // Cleanup the observer on unmount
+  }, []);
 
   return (
     <div className="resume-doc">
@@ -52,7 +67,7 @@ function App() {
           <p></p>
         </div>
       </div>
-      <div className="resume-doc__content content-experience">
+      <div className="resume-doc__content content-experience hidden">
         <h2>Experience</h2>
         {resume.experience.map(
           ({
@@ -84,7 +99,7 @@ function App() {
         )}
       </div>
 
-      <div className="resume-doc__content content-experience">
+      <div className="resume-doc__content content-experience hidden">
         <h2>Education</h2>
         {resume.education.map(
           ({ degree, institution, status, description }) => (
@@ -102,7 +117,7 @@ function App() {
         )}
       </div>
 
-      <div className="resume-doc__content content-experience">
+      <div className="resume-doc__content content-experience hidden">
         <h2>Main Skills</h2>
         <div className="content-experience--job">
           {resume.skills.join(" - ")}
@@ -110,7 +125,7 @@ function App() {
       </div>
 
       <div className="resume-doc__content content-experience">
-        <h2>Side Projects</h2>
+        <h2 className="hidden">Side Projects</h2>
         {resume.side_projects.map(({ name, url }) => (
           <div className="content-experience--job" key={`${name}`}>
             <h3>{name}</h3>
@@ -122,7 +137,7 @@ function App() {
       </div>
 
       <div className="resume-doc__content content-experience">
-        <h2>Articles</h2>
+        <h2 className="hidden">Articles</h2>
         {resume.articles.map(({ title, url }) => (
           <div className="content-experience--job" key={`${title}`}>
             <div className="url-wrapper">
@@ -133,7 +148,7 @@ function App() {
       </div>
 
       <div className="resume-doc__content content-experience">
-        <h2>Certifications</h2>
+        <h2 className="hidden">Certifications</h2>
         {resume.certifications.map(({ name, issuer, date, url, details }) => (
           <div className="content-experience--job" key={`${name}-${issuer}`}>
             <h3>
