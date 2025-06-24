@@ -16,6 +16,11 @@ function App() {
 
   return (
     <div className="resume-doc">
+      <FloatButton
+        icon={<FileTextOutlined />}
+        tooltip={<div>Download a PDF version</div>}
+        onClick={handleDownload}
+      />
       <div className="resume-doc__header">
         <div className="resume-doc__header__avatar">
           <Avatar
@@ -24,29 +29,25 @@ function App() {
             className="profile-pic"
           />
         </div>
-        <FloatButton
-          icon={<FileTextOutlined />}
-          tooltip={<div>Download a PDF version</div>}
-          onClick={handleDownload}
-        />
         <div className="resume-doc__header__description">
           <h1>{resume.name}</h1>
           <p className="secondary-color">{resume.summary}</p>
           <ul>
             <li>
-              <b>Location:</b> Montevideo, Uruguay
+              <b>Location:</b> {resume.contact.location}
             </li>
             <li>
-              <b>Email:</b> dariodcruz@gmail.com
+              <b>Email:</b> {resume.contact.email}
             </li>
             <li>
-              <b>Phone:</b> +598 937 63229
+              <b>Phone:</b> {resume.contact.phone}
             </li>
             <li>
-              <b>Birthdate:</b> 30/11/1990
+              <b>Birthdate:</b> {resume.personal_info.birthdate}
             </li>
             <li>
-              <b>Linkedin:</b> linkedin.com/in/cruzdario
+              <b>Linkedin:</b>{" "}
+              <a href={resume.contact.linkedin}>{resume.contact.linkedin}</a>
             </li>
           </ul>
           <p></p>
