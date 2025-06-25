@@ -16,14 +16,24 @@
       "title": "Team Lead",
       "start_date": "January 2019",
       "end_date": "Present",
-      "description": "I led teams working with multiple fintech clients using a wide variety of technologies, maintaining SPA and server-side applications. Some of the technologies I have been working on are Reactjs, Vue, Solid, RoR, Clojure, ClojureJs, NodeJs, NextJs, PostgreSQL, and Salesforce.",
+      "description": "I have consistently guided cross-functional teams across diverse industries, including financial services, automotive, and technology, while also serving as the architect and developer of the solution.",
       "responsibilities": [
-        "Lead and motivate the team to accomplish the project objectives",
-        "Plan the development and the frontend side of the architecture of the solution",
-        "Provide and receive feedback from each team member",
-        "Empower the team members by guiding them to reach higher positions in their careers",
-        "Taking interviews of new candidates",
-        "Actively assist in the development"
+        "Lead, mentor and motivate the team to accomplish the project goals.",
+        "Define and implement system architecture within Salesforce.",
+        "Conduct stakeholder discovery sessions to gather business requirements.",
+        "Translate business needs into technical specifications and Salesforce functionality.",
+        "Integrate external data sources and third-party tools.",
+        "Oversee development of core application logic and reusable component libraries.",
+        "Ensure code quality through code reviews and adherence to best practices.",
+        "Collaborate with client teams and key stakeholders for solution design.",
+        "Drive frontend development using technologies like ReactJS, VueJS, and Angular."
+      ],
+      "skills" : [
+        "ReactJS",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Salesforce"
       ]
     },
     {

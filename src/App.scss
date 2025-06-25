@@ -94,6 +94,19 @@ body {
       box-sizing: border-box;
     }
   }
+
+  .tag {
+    background-color: #2a2a3b; // fallback green
+    color: #a6a5ae;
+    margin: 0.25rem;
+    transition: background-color 0.2s ease;
+    border: 1px solid darken(#2a2a3b, 10%);
+
+    &:hover {
+      background-color: darken(#2a2a3b, 10%);;
+      cursor: default;
+    }
+  }
 }
 
 @media (min-width: 1024px) {

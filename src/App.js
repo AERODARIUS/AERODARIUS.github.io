@@ -1,17 +1,12 @@
 import React from "react";
-import { Avatar, FloatButton } from "antd";
+import { Avatar, FloatButton, Tag } from "antd";
 import { FileTextOutlined } from "@ant-design/icons";
 import "./App.scss";
 import resume from "./resume.json";
 
 function App() {
   const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "./Dario Cruz Resume.pdf";
-    link.download = "Dario Cruz Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.print();
   };
 
   return (
@@ -65,6 +60,7 @@ function App() {
               end_date,
               description,
               responsibilities,
+              skills
             }) => (
               <div
                 className="content-experience--job"
@@ -82,6 +78,9 @@ function App() {
                     <li key={responsibility}>{responsibility}</li>
                   ))}
                 </ul>
+                  {skills?.map((skill) => (
+                    <Tag key={skill} className="tag">{skill}</Tag>
+                  ))}
               </div>
             )
           )}
