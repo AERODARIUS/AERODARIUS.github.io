@@ -1,6 +1,14 @@
 import React from "react";
 import { Avatar, FloatButton, Image, Tag } from "antd";
-import { FileTextOutlined, ReadOutlined } from "@ant-design/icons";
+import {
+  CalendarFilled,
+  EnvironmentFilled,
+  FileTextOutlined,
+  LinkedinFilled,
+  MailFilled,
+  PhoneFilled,
+  ReadOutlined,
+} from "@ant-design/icons";
 import "./App.scss";
 import resume from "./resume.json";
 import ProjectsGrid from "./components/ProjectsGrid";
@@ -30,19 +38,19 @@ function App() {
           <p className="secondary-color">{resume.summary}</p>
           <ul>
             <li>
-              <b>Location:</b> {resume.contact.location}
+              <EnvironmentFilled /> {resume.contact.location}
             </li>
             <li>
-              <b>Email:</b> {resume.contact.email}
+              <MailFilled /> {resume.contact.email}
             </li>
             <li>
-              <b>Phone:</b> {resume.contact.phone}
+              <PhoneFilled /> {resume.contact.phone}
             </li>
             <li>
-              <b>Birthdate:</b> {resume.personal_info.birthdate}
+              <CalendarFilled /> {resume.personal_info.birthdate}
             </li>
             <li>
-              <b>Linkedin:</b>{" "}
+              <LinkedinFilled />{" "}
               <a
                 href={resume.contact.linkedin.url}
                 target="_blank"
