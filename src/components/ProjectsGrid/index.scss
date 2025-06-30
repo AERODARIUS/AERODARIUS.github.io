@@ -1,0 +1,51 @@
+.projects-grid {
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #2a2a3b;
+    border: 1px solid #3a3a4a;
+    border-radius: 8px;
+    color: #a6a5ae;
+    font-family: "Source Code Pro", monospace;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 12px rgba(249, 254, 255, 0.1);
+    }
+
+    .ant-card-head {
+      background: none;
+      border-bottom: 1px solid #505059;
+      color: #f9feff;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .ant-card-body {
+      flex: 1;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #a6a5ae;
+    }
+
+    .ant-card-actions {
+      background: none;
+      border-top: 1px solid #3a3a4a;
+
+      li {
+        a.card-action-link {
+          color: #f9feff;
+          font-weight: 500;
+
+          &:hover {
+            color: lighten(#f9feff, 10%);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

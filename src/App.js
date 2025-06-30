@@ -1,8 +1,9 @@
 import React from "react";
-import { Avatar, FloatButton, Tag } from "antd";
-import { FileTextOutlined } from "@ant-design/icons";
+import { Avatar, FloatButton, Image, Tag } from "antd";
+import { FileTextOutlined, ReadOutlined } from "@ant-design/icons";
 import "./App.scss";
 import resume from "./resume.json";
+import ProjectsGrid from "./components/ProjectsGrid";
 
 function App() {
   const handleDownload = () => {
@@ -42,7 +43,13 @@ function App() {
             </li>
             <li>
               <b>Linkedin:</b>{" "}
-              <a href={resume.contact.linkedin}>{resume.contact.linkedin}</a>
+              <a
+                href={resume.contact.linkedin.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {resume.contact.linkedin.text}
+              </a>
             </li>
           </ul>
           <p></p>
@@ -60,7 +67,7 @@ function App() {
               end_date,
               description,
               responsibilities,
-              skills
+              skills,
             }) => (
               <div
                 className="content-experience--job"
@@ -78,9 +85,11 @@ function App() {
                     <li key={responsibility}>{responsibility}</li>
                   ))}
                 </ul>
-                  {skills?.map((skill) => (
-                    <Tag key={skill} className="tag">{skill}</Tag>
-                  ))}
+                {skills?.map((skill) => (
+                  <Tag key={skill} className="tag">
+                    {skill}
+                  </Tag>
+                ))}
               </div>
             )
           )}
@@ -103,48 +112,55 @@ function App() {
           )}
         </div>
         <div className="content-experience">
-          <h2>Main Skills</h2>
-          <div className="content-experience--job">
-            {resume.skills.join(" - ")}
-          </div>
-        </div>
-        <div className="content-experience">
           <h2>Side Projects</h2>
-          {resume.side_projects.map(({ name, url }) => (
-            <div className="content-experience--job" key={`${name}`}>
-              <h3>{name}</h3>
-              <div className="url-wrapper">
-                <a href={url}>{url}</a>
-              </div>
-            </div>
-          ))}
+          <ProjectsGrid username={resume.github_username} />
         </div>
         <div className="content-experience">
           <h2>Articles</h2>
           {resume.articles.map(({ title, url }) => (
             <div className="content-experience--job" key={`${title}`}>
               <div className="url-wrapper">
-                <a href={url}>{title}</a>
+                <ReadOutlined />
+                <a href={url} target="_blank" rel="noreferrer">
+                  {title}
+                </a>
               </div>
             </div>
           ))}
         </div>
         <div className="content-experience">
           <h2>Certifications</h2>
-          {resume.certifications.map(({ name, issuer, date, url, details }) => (
-            <div className="content-experience--job" key={`${name}-${issuer}`}>
-              <h3>
-                {name} {issuer ? " - " + issuer : ""}
-              </h3>
-              {date && <h4>{date}</h4>}
-              {url && (
-                <div className="url-wrapper">
-                  <a href={url}>{url}</a>
-                </div>
-              )}
-              <p>{details}</p>
-            </div>
-          ))}
+          {resume.certifications.map(
+            ({ name, issuer, date, url, details, list }) => (
+              <div
+                className="content-experience--job"
+                key={`${name}-${issuer}`}
+              >
+                <h3>
+                  {name} {issuer ? " - " + issuer : ""}
+                </h3>
+                {date && <h4>{date}</h4>}
+                {details && <p>{details}</p>}
+                {list && list.length > 0 && (
+                  <div className="certification-images">
+                    <Image.PreviewGroup>
+                      {list.map(({ image, title }) => (
+                        <Image key={title} width={200} src={image} />
+                      ))}
+                    </Image.PreviewGroup>
+                  </div>
+                )}
+                {url && (
+                  <div className="url-wrapper">
+                    Follow this link to view details:
+                    <a href={url} target="_blank" rel="noreferrer">
+                      {url}
+                    </a>
+                  </div>
+                )}
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>

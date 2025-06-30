@@ -1,11 +1,15 @@
 {
   "name": "Dario Cruz",
+  "github_username": "AERODARIUS",
   "summary": "I’m a tech enthusiast with over 13 years of experience in the development of web applications. I’m passionate about the latest trends in technology, driving collaboration, and achieving results.",
   "contact": {
     "location": "Montevideo, Uruguay",
     "email": "dariodcruz@gmail.com",
     "phone": "+598 937 63229",
-    "linkedin": "linkedin.com/in/cruzdario"
+    "linkedin": {
+      "text": "cruzdario",
+      "url": "https://linkedin.com/in/cruzdario"
+    }
   },
   "personal_info": {
     "birthdate": "30/11/1990"
@@ -29,11 +33,24 @@
         "Drive frontend development using technologies like ReactJS, VueJS, and Angular."
       ],
       "skills" : [
+        "JavaScript (ES6+)",
         "ReactJS",
-        "JavaScript",
         "HTML",
         "CSS",
-        "Salesforce"
+        "Salesforce",
+        "Sales Cloud",
+        "Accessibility (a11y)",
+        "UI/UX",
+        "Jest",
+        "Cypress",
+        "Git",
+        "Firebase",
+        "Salesforce Flows",
+        "Scrum",
+        "Leadership",
+        "Teamwork",
+        "Problem Solving",
+        "Communication"
       ]
     },
     {
@@ -41,12 +58,28 @@
       "title": "Senior Developer",
       "start_date": "July 2018",
       "end_date": "December 2018",
-      "description": "Working with globally distributed agile teams, building and maintaining complex systems based on the Force.com platform.",
+      "description": "Working with globally distributed agile teams, building and maintaining complex systems based on the Salesforce platform.",
       "responsibilities": [
         "Guide Jr. developers whenever a new one joined the project",
-        "Development of the frontend side of the application using Visualforce, Aura components, Lightning pages, JavaScript and AngularJS",
-        "Development of the backend architecture using Apex and declarative capabilities of the Salesforce platform",
+        "Development of the frontend side of the application mainly with HTML, Javascript and CSS",
+        "Development of the backend architecture using Apex Code and declarative capabilities of the Salesforce platform",
         "Migrating Salesforce classic to Lightning experience"
+      ],
+      "skills" : [
+        "JavaScript (ES6+)",
+        "HTML",
+        "CSS",
+        "Salesforce",
+        "Sales Cloud",
+        "Git",
+        "LWC",
+        "Visualforce",
+        "Apex",
+        "Scrum",
+        "Teamwork",
+        "Problem Solving",
+        "Communication",
+        "Adaptability"
       ]
     },
     {
@@ -54,10 +87,26 @@
       "title": "Semi-Senior Developer",
       "start_date": "July 2016",
       "end_date": "June 2018",
-      "description": "Working with an agile team using Scrum methodology to ensure delivery of high-quality work every weekly iteration.",
+      "description": "Working with an agile team using Scrum methodology to ensure the delivery of high-quality work every weekly iteration.",
       "responsibilities": [
-        "Develop Salesforce applications using the declarative capabilities of Salesforce",
-        "Developing complex responsive applications using Apex, Visualforce pages, JavaScript, CSS, and HTML"
+        "Develop Salesforce applications using programmatic and declarative capabilities of Salesforce.",
+        "Developing complex responsive applications using Apex, Visualforce pages, JavaScript, CSS, and HTML."
+      ],
+      "skills" : [
+        "JavaScript (ES6+)",
+        "HTML",
+        "CSS",
+        "Salesforce",
+        "Sales Cloud",
+        "Git",
+        "Aura Components",
+        "Visualforce",
+        "Apex",
+        "Scrum",
+        "Teamwork",
+        "Problem Solving",
+        "Communication",
+        "Adaptability"
       ]
     },
     {
@@ -67,9 +116,25 @@
       "end_date": "June 2016",
       "description": "I was developing a web page to manage clients and events for any eye care company.",
       "responsibilities": [
-        "Developing a web page to manage clients and events for an eye care company",
-        "Implement the interface of the web application in ExtJs",
-        "Help migrate from Salesforce to .Net system"
+        "Developing a web page to manage clients and events for an eye care company.",
+        "Implement the interface of the web application in ExtJS.",
+        "Help migrate from Salesforce to .NET system."
+      ],
+      "skills" : [
+        "JavaScript (ES6+)",
+        "HTML",
+        "CSS",
+        "Salesforce",
+        "Sales Cloud",
+        "Git",
+        "Aura Components",
+        "Visualforce",
+        "Apex",
+        "Scrum",
+        "Teamwork",
+        "Problem Solving",
+        "Communication",
+        "Adaptability"
       ]
     },
     {
@@ -77,7 +142,7 @@
       "title": "QA Advisory",
       "start_date": "August 2013",
       "end_date": "February 2014",
-      "description": "I was in charge of guiding and helping other junior and trainee QAs, in particular with automation. Document all processes regarding the QA activity. Also having the same responsibilities as the previous role.",
+      "description": "I was in charge of guiding and helping other junior and trainee QAs, in particular with automation. Document all processes regarding the QA activity. Also, having the same responsibilities as the previous role.",
       "responsibilities": [
         "Guide and help junior and trainee QAs, particularly with automation",
         "Document all processes regarding QA activity",
@@ -85,6 +150,23 @@
         "Maintenance of automated test cases in Jenkins",
         "Test Web Services using SoapUI and CURL",
         "Performance test cases using JMeter"
+      ],
+      "skills" : [
+        "Manual Testing",
+        "Automation Testing",
+        "Test Planning",
+        "Exploratory Testing",
+        "Regression Testing",
+        "Jenkins",
+        "SoapUI",
+        "CURL",
+        "JMeter",
+        "Scrum",
+        "Teamwork",
+        "Selenium",
+        "Problem Solving",
+        "Communication",
+        "Adaptability"
       ]
     },
     {
@@ -92,14 +174,27 @@
       "title": "QA Tester",
       "start_date": "March 2012",
       "end_date": "July 2013",
-      "description": "Specialized education in machine learning and natural language processing.",
+      "description": "In charge of testing web applications. Also, test Web Services using SoapUI and CURL. Collaborate and communicate with the client QA team in test planning and manual testing.",
       "responsibilities": [
         "Perform exploratory testing",
         "Write and execute test plans",
         "Responsive design testing",
         "Maintenance of automated test cases in Jenkins",
         "Test Web Services using SoapUI and CURL",
-        "Performance test cases using JMeter"
+        "Performance test cases using JMeter",
+        "Responsive design testing"
+      ],
+      "skills" : [
+        "Manual Testing",
+        "Automation Testing",
+        "Test Planning",
+        "Exploratory Testing",
+        "Regression Testing",
+        "SoapUI",
+        "CURL",
+        "Scrum",
+        "Teamwork",
+        "Selenium"
       ]
     }
   ],
@@ -122,43 +217,55 @@
       "name": "Scrum Foundation Professional Certificate",
       "issuer": "CertiProf",
       "date": "January 2020",
-      "details": "Certification Id: FLCLDJLPDB-SSSQKQGK-WHKBDHKWKF"
+      "details": "Certification Id: FLCLDJLPDB-SSSQKQGK-WHKBDHKWKF",
+      "list": [
+        {
+          "title": "Salesforce Certified Administrator",
+          "image": "img/certs/Scrum Master cert.jpg"
+        }
+      ]
     },
     {
       "name": "First Certificate In English",
       "issuer": "Anglo Institute",
       "date": "June 2010",
-      "details": "Council of Europe Level B2, University of Cambridge Accreditation Number: 500/2705/0"
+      "details": "Council of Europe Level B2, University of Cambridge Accreditation Number: 500/2705/0",
+      "list": [
+        {
+          "title": "Salesforce Certified Administrator",
+          "image": "img/certs/First Certificate in English.jpg"
+        }
+      ]
     },
     {
       "name": "Salesforce Certifications",
       "url": "https://trailblazer.me/id/dariocruz",
-      "details": "Platform App Builder - Platform Developer I - JavaScript Developer I - Business Analyst - AI Associate"
-    }
-  ],
-  "skills": [
-    "ReactJs",
-    "JavaScript (ES6+)",
-    "CSS",
-    "HTML",
-    "SQL",
-    "Salesforce",
-    "Leadership",
-    "Scrum",
-    "OOP"
-  ],
-  "side_projects": [
-    {
-      "name": "GitHub Projects",
-      "url": "https://github.com/AERODARIUS"
-    },
-    {
-      "name": "XLS to XML Converter (Java)",
-      "url": "https://sourceforge.net/projects/xlstoxml"
-    },
-    {
-      "name": "Demo React application (ReactJs)",
-      "url": "https://erp-rpg.web.app"
+      "list": [
+        {
+          "title": "Salesforce Certified Administrator",
+          "image": "./img/salesforce_certs/2021-03_Badge_SF-Certified_Administrator_High-Res.png"
+        },
+        {
+          "title": "Salesforce Certified JavaScript Developer I",
+          "image": "./img/salesforce_certs/2021-03_Badge_SF-Certified_JavaScript-Developer-I_High-Res.png"
+        },
+        {
+          "title": "Salesforce Certified Platform App Builder",
+          "image": "./img/salesforce_certs/2021-03_Badge_SF-Certified_Platform-App-Builder_High-Res.png"
+        },
+        {
+          "title": "Salesforce Certified Platform Developer I",
+          "image": "./img/salesforce_certs/2021-03_Badge_SF-Certified_Platform-Developer-I_High-Res.png"
+        },
+        {
+          "title": "Salesforce Certified Business Analyst",
+          "image": "./img/salesforce_certs/2021-06_Badge_SF-Certified_Business-Analyst_High-Res.png"
+        },
+        {
+          "title": "Salesforce Certified AI Associate",
+          "image": "./img/salesforce_certs/2023-07_Badge_SF-Certified_AI-Associate_High-Res.png"
+        }
+      ]
     }
   ],
   "articles": [

@@ -21,6 +21,10 @@ body {
 
   .url-wrapper {
     word-break: break-all;
+
+    a {
+      margin-left: 1rem;
+    }
   }
 
   b {
@@ -41,7 +45,7 @@ body {
   }
 
   h4 {
-    color: $color-primary;
+    color: #f9f9ffcf;
   }
 
   &__header {
@@ -92,6 +96,17 @@ body {
       margin-bottom: 3rem;
       padding-left: 1rem;
       box-sizing: border-box;
+
+      .certification-images {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+      }
+
+      .url-wrapper {
+        margin-top: 1rem;
+      }
     }
   }
 
@@ -103,7 +118,7 @@ body {
     border: 1px solid darken(#2a2a3b, 10%);
 
     &:hover {
-      background-color: darken(#2a2a3b, 10%);;
+      background-color: darken(#2a2a3b, 10%);
       cursor: default;
     }
   }
