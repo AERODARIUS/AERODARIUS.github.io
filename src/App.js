@@ -12,6 +12,7 @@ import {
 import "./App.scss";
 import resume from "./resume.json";
 import ProjectsGrid from "./components/ProjectsGrid";
+import RadarStats from "./components/RadarStats";
 
 function App() {
   const handleDownload = () => {
@@ -64,7 +65,10 @@ function App() {
         </div>
       </div>
       <div className="resume-doc__content">
-        {" "}
+        <div className="content-experience">
+          <h2>Skills Summary</h2>
+          <RadarStats />
+        </div>
         <div className="content-experience">
           <h2>Experience</h2>
           {resume.experience.map(
@@ -103,7 +107,7 @@ function App() {
           )}
         </div>
         <div className="content-experience">
-          <h2>Education</h2>
+          <h2>Formal Education</h2>
           {resume.education.map(
             ({ degree, institution, status, description }) => (
               <div
@@ -118,23 +122,6 @@ function App() {
               </div>
             )
           )}
-        </div>
-        <div className="content-experience">
-          <h2>Side Projects</h2>
-          <ProjectsGrid username={resume.github_username} />
-        </div>
-        <div className="content-experience">
-          <h2>Articles</h2>
-          {resume.articles.map(({ title, url }) => (
-            <div className="content-experience--job" key={`${title}`}>
-              <div className="url-wrapper">
-                <ReadOutlined />
-                <a href={url} target="_blank" rel="noreferrer">
-                  {title}
-                </a>
-              </div>
-            </div>
-          ))}
         </div>
         <div className="content-experience">
           <h2>Certifications</h2>
@@ -169,6 +156,23 @@ function App() {
               </div>
             )
           )}
+        </div>
+        <div className="content-experience">
+          <h2>Side Projects</h2>
+          <ProjectsGrid username={resume.github_username} />
+        </div>
+        <div className="content-experience">
+          <h2>Articles</h2>
+          {resume.articles.map(({ title, url }) => (
+            <div className="content-experience--job" key={`${title}`}>
+              <div className="url-wrapper">
+                <ReadOutlined />
+                <a href={url} target="_blank" rel="noreferrer">
+                  {title}
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
