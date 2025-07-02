@@ -1,3 +1,5 @@
+@use "../../tokens.scss" as *;
+
 .projects-grid {
   .project-card {
     display: flex;
@@ -13,6 +15,18 @@
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 0 12px rgba(249, 254, 255, 0.1);
+    }
+
+    h3 {
+      margin: 0;
+    }
+
+    &__icon {
+      margin-right: 1rem;
+    }
+
+    &__description {
+      color: $color-primary;
     }
 
     .ant-card-head {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Row, Spin } from "antd";
 import "./index.scss";
+import { GithubOutlined } from "@ant-design/icons";
 
 const ProjectsGrid = ({ username }) => {
   const [repos, setRepos] = useState([]);
@@ -51,11 +52,19 @@ const ProjectsGrid = ({ username }) => {
         <Col xs={24} sm={12} md={8} lg={8} key={repo.id}>
           <Card
             className="project-card"
-            title={repo.name}
+            title={
+              <h3>
+                <GithubOutlined className="project-card__icon" />
+                {repo.name}
+              </h3>
+            }
             hoverable
             actions={getActions(repo)}
           >
-            <p>{repo.description || "No description provided."}</p>
+            <p className="project-card__description">
+              {repo.description || "No description provided."}
+            </p>
+            <p>Main language: {repo.language || "Not specified"}</p>
           </Card>
         </Col>
       ))}
