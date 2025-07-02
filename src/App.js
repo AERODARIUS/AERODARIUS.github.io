@@ -9,10 +9,19 @@ import {
   PhoneFilled,
   ReadOutlined,
 } from "@ant-design/icons";
+import { PopupButton } from "react-calendly";
 import "./App.scss";
 import resume from "./resume.json";
 import ProjectsGrid from "./components/ProjectsGrid";
 import RadarStats from "./components/RadarStats";
+
+const BookingSection = () => (
+  <PopupButton
+    url="https://calendly.com/dariodcruz/30min"
+    rootElement={document.getElementById("root")}
+    text="Book a Meeting"
+  />
+);
 
 function App() {
   const handleDownload = () => {
@@ -61,7 +70,9 @@ function App() {
               </a>
             </li>
           </ul>
-          <p></p>
+          <p>
+            <BookingSection />
+          </p>
         </div>
       </div>
       <div className="resume-doc__content">

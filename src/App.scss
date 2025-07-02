@@ -79,6 +79,18 @@ body {
         padding: 0;
         line-height: 2rem;
       }
+
+      button {
+        cursor: pointer;
+          font-size: 1.5rem;
+          border-radius: 0.5rem;
+          background-color: #fff;
+          padding: 0.3rem 0.5rem;
+
+        @media (min-width: 1024px) {
+          font-size: 1rem;
+        }
+      }
     }
   }
 
