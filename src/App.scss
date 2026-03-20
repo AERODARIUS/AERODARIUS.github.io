@@ -248,6 +248,25 @@ body {
   top: 0;
   z-index: 40;
   margin: 0 auto;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.page-header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.page-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.page-header__toggle {
+  display: none;
 }
 
 .resume-sidebar,
@@ -444,19 +463,6 @@ body {
     font-size: 0.82rem;
     white-space: nowrap;
   }
-}
-
-.section-nav__utility {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-}
-
-.section-nav__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
 }
 
 .contact-list {
@@ -675,6 +681,9 @@ body {
   .page-header {
     width: min(1480px, calc(100% - 3rem));
     margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1rem;
   }
 
   .resume-layout {
@@ -685,9 +694,7 @@ body {
   }
 
   .section-nav {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    column-gap: 1rem;
+    display: block;
   }
 
   .section-nav__links {
@@ -699,16 +706,6 @@ body {
 
   .section-nav__links::-webkit-scrollbar {
     display: none;
-  }
-
-  .section-nav__actions {
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-  }
-
-  .section-nav__utility {
-    justify-content: flex-end;
-    flex-wrap: nowrap;
   }
 
   .theme-controls__buttons {
@@ -749,6 +746,61 @@ body {
   .page-header {
     width: min(100% - 1rem, 100%);
     margin: 0 auto;
+  }
+
+  .page-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    padding-top: 0.5rem;
+    order: -1;
+  }
+
+  .page-header__actions {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  .page-header__actions > * {
+    flex-shrink: 0;
+  }
+
+  .page-header__toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+  }
+
+  .action-button--icon,
+  .theme-toggle {
+    width: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .section-nav {
+    display: none;
+  }
+
+  .section-nav--open {
+    display: grid;
+  }
+
+  .section-nav__links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .theme-toggle {
+    padding: 0;
+  }
+
+  .theme-toggle__label {
+    display: none;
   }
 
   .resume-layout {

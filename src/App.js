@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Image, Tag } from "antd";
 import {
   CalendarFilled,
+  CloseOutlined,
   DesktopOutlined,
   EnvironmentFilled,
   FileTextOutlined,
   LinkedinFilled,
   MailFilled,
+  MenuOutlined,
   MoonFilled,
   PhoneFilled,
   ReadOutlined,
@@ -121,15 +123,19 @@ const applyDocumentTheme = (theme) => {
   document.documentElement.style.colorScheme = theme;
 };
 
-const BookingSection = () => {
+const BookingSection = ({ onOpen }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(true);
+    onOpen?.();
+  };
 
   return (
     <>
       <button
         type="button"
         className="action-button action-button--secondary action-button--icon booking-button"
-        onClick={() => setIsOpen(true)}
+        onClick={handleOpen}
         aria-label="Book a Meeting"
         title="Book a Meeting"
       >
@@ -160,6 +166,7 @@ function App() {
     .split(",")
     .map((value) => value.trim());
   const pageHeaderRef = useRef(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [themePreference, setThemePreference] = useState(() =>
     getStoredThemePreference()
   );
@@ -353,11 +360,20 @@ function App() {
   }, [city, country, keywordText, metaDescription, pageTitle, primaryRole]);
 
   const handleDownload = () => {
+    setIsMobileMenuOpen(false);
     window.print();
   };
 
   const handleThemeToggle = () => {
     setThemePreference(nextThemeMode === "system" ? null : nextThemeMode);
+  };
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen((currentValue) => !currentValue);
+  };
+
+  const handleMobileMenuClose = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -367,29 +383,32 @@ function App() {
       </a>
 
       <header className="page-header" ref={pageHeaderRef}>
-        <nav className="section-nav" aria-label="Resume sections">
+        <nav
+          className={`section-nav${isMobileMenuOpen ? " section-nav--open" : ""}`}
+          aria-label="Resume sections"
+          id="section-nav"
+        >
           <div className="section-nav__links">
             {sectionLinks.map(({ id, label }) => (
-              <a key={id} href={`#${id}`}>
+              <a key={id} href={`#${id}`} onClick={handleMobileMenuClose}>
                 {label}
               </a>
             ))}
           </div>
+        </nav>
 
-          <div className="section-nav__utility">
-            <div className="section-nav__actions">
-              <button
-                type="button"
-                className="action-button action-button--primary action-button--icon"
-                onClick={handleDownload}
-                aria-label="Download PDF"
-                title="Download PDF"
-              >
-                <FileTextOutlined aria-hidden="true" />
-              </button>
-              <BookingSection />
-            </div>
-
+        <div className="page-header__bar">
+          <div className="page-header__actions">
+            <button
+              type="button"
+              className="action-button action-button--primary action-button--icon"
+              onClick={handleDownload}
+              aria-label="Download PDF"
+              title="Download PDF"
+            >
+              <FileTextOutlined aria-hidden="true" />
+            </button>
+            <BookingSection onOpen={handleMobileMenuClose} />
             <div className="theme-controls">
               <div
                 className="theme-controls__buttons"
@@ -409,12 +428,30 @@ function App() {
                   ) : (
                     <SunFilled />
                   )}
-                  <span>{THEME_MODE_COPY[themeMode]}</span>
+                  <span className="theme-toggle__label">
+                    {THEME_MODE_COPY[themeMode]}
+                  </span>
                 </button>
               </div>
             </div>
           </div>
-        </nav>
+
+          <button
+            type="button"
+            className="action-button action-button--secondary action-button--icon page-header__toggle"
+            onClick={handleMobileMenuToggle}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="section-nav"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            title={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? (
+              <CloseOutlined aria-hidden="true" />
+            ) : (
+              <MenuOutlined aria-hidden="true" />
+            )}
+          </button>
+        </div>
       </header>
 
       <div className="resume-layout">
