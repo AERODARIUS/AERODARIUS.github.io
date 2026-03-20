@@ -1,1 +1,113 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet"><title>React App</title><script defer="defer" src="/static/js/main.aee1805d.js"></script><link href="/static/css/main.e08ed127.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#114c5f" />
+    <script>
+      (function () {
+        var storageKey = "portfolio-theme-preference";
+        var isTheme = function (value) {
+          return value === "light" || value === "dark";
+        };
+        var root = document.documentElement;
+
+        try {
+          var storedTheme = window.localStorage.getItem(storageKey);
+          var systemTheme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          var theme = isTheme(storedTheme) ? storedTheme : systemTheme;
+          var themeColor = theme === "dark" ? "#08111a" : "#114c5f";
+          var themeMetaTag = document.querySelector('meta[name="theme-color"]');
+
+          root.dataset.theme = theme;
+          root.style.colorScheme = theme;
+
+          if (themeMetaTag) {
+            themeMetaTag.setAttribute("content", themeColor);
+          }
+        } catch (error) {
+          var fallbackTheme =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+
+          root.dataset.theme = fallbackTheme;
+          root.style.colorScheme = fallbackTheme;
+        }
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Dario Cruz portfolio and resume. Team Lead and web application developer with over 13 years of experience building modern web applications."
+    />
+    <meta
+      name="keywords"
+      content="Dario Cruz, portfolio, resume, Team Lead, web application developer, Salesforce, ReactJS, UI UX, accessibility"
+    />
+    <meta name="author" content="Dario Cruz" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dario Cruz | Team Lead Portfolio" />
+    <meta
+      property="og:description"
+      content="Portfolio and resume for Dario Cruz, a Team Lead and web application developer with Salesforce and frontend expertise."
+    />
+    <meta property="og:url" content="https://aerodarius.github.io/" />
+    <meta
+      property="og:image"
+      content="https://aerodarius.github.io/img/profile_pic.jpeg"
+    />
+    <meta property="og:site_name" content="Dario Cruz" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dario Cruz | Team Lead Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Portfolio and resume for Dario Cruz, a Team Lead and web application developer."
+    />
+    <meta
+      name="twitter:image"
+      content="https://aerodarius.github.io/img/profile_pic.jpeg"
+    />
+    <link rel="canonical" href="https://aerodarius.github.io/" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dario Cruz | Team Lead Portfolio</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Dario Cruz",
+        "description": "Tech enthusiast with over 13 years of experience in the development of web applications.",
+        "jobTitle": "Team Lead",
+        "image": "https://aerodarius.github.io/img/profile_pic.jpeg",
+        "email": "mailto:dariodcruz@gmail.com",
+        "telephone": "+598 937 63229",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montevideo",
+          "addressCountry": "Uruguay"
+        },
+        "sameAs": [
+          "https://linkedin.com/in/cruzdario",
+          "https://github.com/AERODARIUS"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
