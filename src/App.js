@@ -551,18 +551,6 @@ function App() {
               ))}
             </nav>
           </div>
-
-          <section className="sidebar-panel" aria-labelledby="selected-skills-title">
-            <p className="section-kicker">Selected Skills</p>
-            <h2 id="selected-skills-title">Technical Range</h2>
-            <div className="tag-list tag-list--compact">
-              {featuredSkills.map((skill) => (
-                <Tag key={skill} className="tag">
-                  {skill}
-                </Tag>
-              ))}
-            </div>
-          </section>
         </aside>
 
         <main className="resume-main" id="main-content">
@@ -619,7 +607,7 @@ function App() {
           <section className="content-section" id="skills-summary">
             <div className="section-heading">
               <p className="section-kicker">Capabilities</p>
-              <h2>Skills Summary</h2>
+              <h2>Technical Domain</h2>
             </div>
             <div className="section-card section-card--chart">
               <RadarStats theme={activeTheme} />

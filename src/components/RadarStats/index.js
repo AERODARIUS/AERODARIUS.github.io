@@ -93,7 +93,6 @@ const RadarChart = ({ theme = "light" }) => {
     ],
     datasets: [
       {
-        label: "Skill set stats (%)",
         data: skillAreas.map((item) => item.value),
         backgroundColor: palette.fill,
         borderColor: palette.border,
