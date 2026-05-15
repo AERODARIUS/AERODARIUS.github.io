@@ -1,7 +1,25 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Empty, Row, Skeleton } from "antd";
-import { CodeOutlined, GithubOutlined, LinkOutlined } from "@ant-design/icons";
+import { Empty, Skeleton } from "antd";
+import {
+  CodeOutlined,
+  ForkOutlined,
+  GithubOutlined,
+  LinkOutlined,
+  StarOutlined,
+} from "@ant-design/icons";
 import "./index.scss";
+
+const formatUpdatedDate = (value) => {
+  if (!value) {
+    return "N/A";
+  }
+
+  return new Intl.DateTimeFormat(undefined, {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(value));
+};
 
 const ProjectsGrid = ({ username }) => {
   const [repos, setRepos] = useState([]);
@@ -66,61 +84,83 @@ const ProjectsGrid = ({ username }) => {
   }
 
   return (
-    <Row gutter={[20, 20]} className="projects-grid">
+    <div className="projects-grid" role="list">
       {repos.map((repo) => {
-        const actions = [
-          <a
-            key={`${repo.id}-code`}
-            href={repo.html_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="card-action-link"
-          >
-            <CodeOutlined />
-            Source
-          </a>,
-        ];
-
-        if (repo.homepage) {
-          actions.push(
-            <a
-              key={`${repo.id}-homepage`}
-              href={repo.homepage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="card-action-link"
-            >
-              <LinkOutlined />
-              Website
-            </a>
-          );
-        }
+        const homepage = repo.homepage?.trim();
+        const topics = Array.isArray(repo.topics) ? repo.topics.slice(0, 4) : [];
 
         return (
-          <Col xs={24} sm={12} xl={8} key={repo.id}>
-            <Card
-              className="project-card"
-              title={
-                <div className="project-card__title">
-                  <GithubOutlined className="project-card__icon" />
-                  <span>{repo.name}</span>
-                </div>
-              }
-              extra={<span className="project-card__language">{repo.language || "N/A"}</span>}
-              hoverable
-              actions={actions}
-            >
-              <p className="project-card__description">
-                {repo.description || "No description provided."}
-              </p>
-              <p className="project-card__meta">
-                Last updated {new Date(repo.pushed_at).toLocaleDateString()}
-              </p>
-            </Card>
-          </Col>
+          <article className="project-card" key={repo.id} role="listitem">
+            <div className="project-card__topline">
+              <span>
+                <GithubOutlined aria-hidden="true" />
+                Repository
+              </span>
+              <span>{repo.language || "N/A"}</span>
+            </div>
+            <h3 className="project-card__title">
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+                {repo.name}
+              </a>
+            </h3>
+            <p className="project-card__description">
+              {repo.description || "No description provided."}
+            </p>
+            {topics.length > 0 && (
+              <ul className="project-card__topics" aria-label={`${repo.name} topics`}>
+                {topics.map((topic) => (
+                  <li key={`${repo.id}-${topic}`}>{topic}</li>
+                ))}
+              </ul>
+            )}
+            <dl className="project-card__meta">
+              <div>
+                <dt>Updated</dt>
+                <dd>{formatUpdatedDate(repo.pushed_at)}</dd>
+              </div>
+              <div>
+                <dt>
+                  <StarOutlined aria-hidden="true" />
+                  Stars
+                </dt>
+                <dd>{repo.stargazers_count ?? 0}</dd>
+              </div>
+              <div>
+                <dt>
+                  <ForkOutlined aria-hidden="true" />
+                  Forks
+                </dt>
+                <dd>{repo.forks_count ?? 0}</dd>
+              </div>
+            </dl>
+            <div className="project-card__actions">
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-action-link card-action-link--primary"
+                aria-label={`View source for ${repo.name}`}
+              >
+                <CodeOutlined aria-hidden="true" />
+                Source
+              </a>
+              {homepage && (
+                <a
+                  href={homepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-action-link"
+                  aria-label={`Open website for ${repo.name}`}
+                >
+                  <LinkOutlined aria-hidden="true" />
+                  Website
+                </a>
+              )}
+            </div>
+          </article>
         );
       })}
-    </Row>
+    </div>
   );
 };
 

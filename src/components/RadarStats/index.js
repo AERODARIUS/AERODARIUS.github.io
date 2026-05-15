@@ -15,7 +15,7 @@ ChartJS.register(
   LineElement,
   Filler,
   Tooltip,
-  Legend
+  Legend,
 );
 
 const chartThemePalette = {
@@ -37,22 +37,64 @@ const chartThemePalette = {
   },
 };
 
+const skillAreas = [
+  {
+    label: "Frontend Engineering",
+    value: 95,
+    description:
+      "React, TypeScript, accessibility (a11y), responsive design, state management, component architecture, design systems, performance optimization",
+  },
+  {
+    label: "Backend Engineering",
+    value: 40,
+    description:
+      "Node.js, Express.js, REST APIs",
+  },
+  {
+    label: "Agentic Engineering",
+    value: 70,
+    description:
+      "AI-assisted development, Orchestration, MCP, Prompt Engineering",
+  },
+  {
+    label: "DevOps & CI/CD",
+    value: 50,
+    description: "CI/CD pipelines, GitHub Actions, deployment automation",
+  },
+  {
+    label: "Cloud & Infrastructure",
+    value: 80,
+    description: "Google Cloud Platform, Firebase, Salesforce",
+  },
+  {
+    label: "Data Science & AI/ML",
+    value: 60,
+    description: "Machine learning, Neural Networks, NLP, LLMs, Data Collection & Cleaning",
+  },
+  {
+    label: "Testing & Quality",
+    value: 50,
+    description:
+      "Unit Testing, Code Review, Integration Testing, E2E, Testing Automation",
+  },
+];
+
 const RadarChart = ({ theme = "light" }) => {
   const palette = chartThemePalette[theme] || chartThemePalette.light;
   const data = {
     labels: [
-      "Frontend",
-      "Backend",
-      "DevOps",
-      "Salesforce",
+      "Frontend Engineering",
+      "Backend Engineering",
+      "Agentic Development",
+      "DevOps & CI/CD",
+      "Cloud & Infrastructure",
       "Data Science & AI/ML",
-      "Firebase",
-      "QA & Testing",
+      "Testing & Quality",
     ],
     datasets: [
       {
         label: "Skill set stats (%)",
-        data: [90, 40, 30, 70, 20, 60, 30],
+        data: skillAreas.map((item) => item.value),
         backgroundColor: palette.fill,
         borderColor: palette.border,
         borderWidth: 2,
@@ -68,7 +110,13 @@ const RadarChart = ({ theme = "light" }) => {
     maintainAspectRatio: false,
     plugins: {
       legend: {
-        display: false,
+        display: true,
+        position: "bottom",
+        labels: {
+          font: {
+            size: 14,
+          },
+        },
       },
     },
     scales: {
@@ -101,12 +149,25 @@ const RadarChart = ({ theme = "light" }) => {
   };
 
   return (
-    <div
-      className="radar-stats"
-      role="img"
-      aria-label="Radar chart summarizing Dario Cruz's skill areas across frontend, backend, DevOps, Salesforce, data science and AI, Firebase, and QA and testing."
-    >
-      <Radar data={data} options={options} />
+    <div>
+      <div
+        className="radar-stats"
+        role="img"
+        aria-label="Radar chart summarizing Dario Cruz's skill areas across frontend, backend, DevOps, Salesforce, data science and AI, Firebase, and QA and testing."
+      >
+        <Radar data={data} options={options} />
+      </div>
+      <div className="skills-explanation">
+        <h3>Domain Definitions</h3>
+
+        <ul>
+          {skillAreas.map((item) => (
+            <li key={item.label}>
+              <strong>{item.label}:</strong> {item.description}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

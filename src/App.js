@@ -6,6 +6,7 @@ import {
   DesktopOutlined,
   EnvironmentFilled,
   FileTextOutlined,
+  GithubOutlined,
   LinkedinFilled,
   MailFilled,
   MenuOutlined,
@@ -230,6 +231,41 @@ function App() {
       href: resume.contact.linkedin.url,
     },
   ];
+  const quickLinks = [
+    {
+      icon: <MailFilled aria-hidden="true" />,
+      label: "Email",
+      href: `mailto:${resume.contact.email}`,
+    },
+    {
+      icon: <LinkedinFilled aria-hidden="true" />,
+      label: "LinkedIn",
+      href: resume.contact.linkedin.url,
+    },
+    {
+      icon: <GithubOutlined aria-hidden="true" />,
+      label: "GitHub",
+      href: `https://github.com/${resume.github_username}`,
+    },
+  ];
+  const overviewItems = [
+    {
+      label: "Current role",
+      value: primaryRole.title,
+      detail: primaryRole.company,
+    },
+    {
+      label: "Timeline",
+      value: `${primaryRole.start_date} - ${primaryRole.end_date}`,
+      detail: primaryRole.company,
+    },
+    {
+      label: "Location",
+      value: resume.contact.location,
+      detail: resume.contact.email,
+    },
+  ];
+  const featuredSkills = experienceKeywords.slice(0, 9);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia?.("(prefers-color-scheme: dark)");
@@ -359,6 +395,22 @@ function App() {
     });
   }, [city, country, keywordText, metaDescription, pageTitle, primaryRole]);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   const handleDownload = () => {
     setIsMobileMenuOpen(false);
     window.print();
@@ -383,21 +435,32 @@ function App() {
       </a>
 
       <header className="page-header" ref={pageHeaderRef}>
-        <nav
-          className={`section-nav${isMobileMenuOpen ? " section-nav--open" : ""}`}
-          aria-label="Resume sections"
-          id="section-nav"
-        >
-          <div className="section-nav__links">
-            {sectionLinks.map(({ id, label }) => (
-              <a key={id} href={`#${id}`} onClick={handleMobileMenuClose}>
-                {label}
-              </a>
-            ))}
-          </div>
-        </nav>
-
         <div className="page-header__bar">
+          <a
+            className="page-header__brand"
+            href="#main-content"
+            onClick={handleMobileMenuClose}
+          >
+            <span>{resume.name}</span>
+            <span>{primaryRole.title}</span>
+          </a>
+
+          <nav
+            className={`section-nav${
+              isMobileMenuOpen ? " section-nav--open" : ""
+            }`}
+            aria-label="Resume sections"
+            id="section-nav"
+          >
+            <div className="section-nav__links">
+              {sectionLinks.map(({ id, label }) => (
+                <a key={id} href={`#${id}`} onClick={handleMobileMenuClose}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          </nav>
+
           <div className="page-header__actions">
             <button
               type="button"
@@ -422,11 +485,11 @@ function App() {
                   aria-label={themeToggleLabel}
                 >
                   {themeMode === "system" ? (
-                    <DesktopOutlined />
+                    <DesktopOutlined aria-hidden="true" />
                   ) : themeMode === "dark" ? (
-                    <MoonFilled />
+                    <MoonFilled aria-hidden="true" />
                   ) : (
-                    <SunFilled />
+                    <SunFilled aria-hidden="true" />
                   )}
                   <span className="theme-toggle__label">
                     {THEME_MODE_COPY[themeMode]}
@@ -455,7 +518,7 @@ function App() {
       </header>
 
       <div className="resume-layout">
-        <aside className="resume-sidebar">
+        <aside className="resume-sidebar" aria-label="Profile overview">
           <div className="profile-panel">
             <p className="profile-panel__eyebrow">Portfolio Resume</p>
             <div className="profile-panel__identity">
@@ -472,7 +535,34 @@ function App() {
                 <p className="profile-panel__summary">{resume.summary}</p>
               </div>
             </div>
+            <nav className="profile-panel__links" aria-label="Primary links">
+              {quickLinks.map(({ icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  aria-label={label}
+                  title={label}
+                >
+                  {icon}
+                  <span>{label}</span>
+                </a>
+              ))}
+            </nav>
           </div>
+
+          <section className="sidebar-panel" aria-labelledby="selected-skills-title">
+            <p className="section-kicker">Selected Skills</p>
+            <h2 id="selected-skills-title">Technical Range</h2>
+            <div className="tag-list tag-list--compact">
+              {featuredSkills.map((skill) => (
+                <Tag key={skill} className="tag">
+                  {skill}
+                </Tag>
+              ))}
+            </div>
+          </section>
         </aside>
 
         <main className="resume-main" id="main-content">
@@ -480,6 +570,15 @@ function App() {
             <div className="hero-band__copy">
               <p className="section-kicker">Current Focus</p>
               <h2>{resume.summary_short}</h2>
+            </div>
+            <div className="hero-band__insights" aria-label="Professional highlights">
+              {overviewItems.map(({ label, value, detail }) => (
+                <article className="insight-card" key={label}>
+                  <span>{label}</span>
+                  <strong>{value}</strong>
+                  <small>{detail}</small>
+                </article>
+              ))}
             </div>
           </section>
 
@@ -532,7 +631,7 @@ function App() {
               <p className="section-kicker">Career Path</p>
               <h2>Experience</h2>
             </div>
-            <div className="timeline">
+            <div className="timeline" role="list">
               {resume.experience.map(
                 ({
                   company,
@@ -546,6 +645,7 @@ function App() {
                   <article
                     className="timeline-item"
                     key={`${company}-${title}-${start_date}-${end_date}`}
+                    role="listitem"
                   >
                     <div className="timeline-item__header">
                       <div>
@@ -630,6 +730,7 @@ function App() {
                                 className="certification-image"
                                 src={resolveAssetPath(image)}
                                 alt={title}
+                                loading="lazy"
                               />
                             ))}
                           </Image.PreviewGroup>
