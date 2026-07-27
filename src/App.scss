@@ -989,6 +989,23 @@ select {
     display: block;
   }
 
+  .content-section {
+    display: block;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin-bottom: 0.2in;
+  }
+
+  .content-section + .content-section {
+    margin-top: 0.22in;
+  }
+
+  #education {
+    clear: both;
+    break-before: auto;
+    page-break-before: auto;
+  }
+
   .profile-panel,
   .hero-band,
   .section-card,
@@ -1177,8 +1194,15 @@ select {
   .certification-card,
   .achievement-card,
   .article-card {
+    break-inside: avoid;
     page-break-inside: avoid;
     margin-bottom: 0.14in;
+  }
+
+  .stack-card > * + *,
+  .certification-card > * + *,
+  .achievement-card > * + * {
+    margin-top: 0.04in;
   }
 
   .stack-card h3,
